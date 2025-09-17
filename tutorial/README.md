@@ -239,11 +239,11 @@ Using `ls` or a combination of `cd` and `ls`, explore the ICE detention statisti
 
 **Write your answers here:**
 
-1. Most recent fiscal year: 
+1. Most recent fiscal year: 2025
 
-2. Number of FY25 files: 
+2. Number of FY25 files: 2
 
-3. What the numbers represent: 
+3. What the numbers represent: The date of the ICE detention statistics (in the format month/day/year).
 
 (Check your answers against the solutions file when complete)
 
@@ -349,13 +349,13 @@ Typing the minimal number of characters, delete the file `data/manual/mock_data/
 
 **Write your answer here:**
 
-Method used (arrow keys or ctrl+r): 
+Method used (arrow keys or ctrl+r): Arrow keys
 
 Commands used: 
 
-1. 
+1. rm data/manual/mock_data/mock_data_1.txt
 
-2. 
+2. rmdir data/manual/mock_data/
 
 ## Viewing and previewing files
 
@@ -425,11 +425,11 @@ Use the commands you've learned to examine the UMPD Incidents CSV file and answe
 
 **Write your answers here:**
 
-1. First incident type on 2/1/2025: 
+1. First incident type on 2/1/2025: Damage to State Property (question mark? - I see the solutions file says it's "Injured/Sick Person," and I see that entry too, but that one is at 7:46 a.m. and the "Damage to State Property" one is at 1:23 a.m. Unless I'm reading this wrong, which could totally be the case!)
 
-2. Total rows (excluding header): 
+2. Total rows (excluding header): 18,351
 
-3. Most recent date in file: 
+3. Most recent date in file: August 28, 2025
 
 ## Searching for files and their contents
 
@@ -489,17 +489,18 @@ Explore the FOIA logs and answer these questions:
 
 **Write your answers here:**
 
-1. Command to find 2024 CSV FOIA logs: 
+1. Command to find 2024 CSV FOIA logs: find data/ice-foia-logs/ -iname '*foia*.csv'
 
-2. Number of 2024 CSV files: 
+2. Number of 2024 CSV files: 2
 
-3. Your search term: 
+3. Your search term: grep 'privacy' data/ice-foia-logs/2024-10_FOIA_Log.csv
 
-   What you found: 
+   What you found:
+   2025-ICFO-04399,2024-10-30,Emily Holshouser,Arizona State University Walter Cronkite School of Journalism & Mass Communications,"records pertaining to copies of audits or assessments of artificial intelligence models conducted internally by U.S. Immigration and Customs Enforcement or by external groups, focused on such common areas as (but not exclusive of): harmful bias and discrimination, effectiveness and validity, data protection and privacy, and transparency and explainability, and conducted between January 1, 2022 to the present, as referred to under ACCOUNTABILITY FOR TRUSTWORTHY AI in #2, “AI Audits and Assessments,” in this federal register notice from 4/13/2023"
 
 **Bonus answer:**
 
-Month with most requests: 
+Month with most requests: September
 
 ### Try it together
 
@@ -535,9 +536,12 @@ Use a different pattern to search the FOIA log CSV files for something of intere
 
 **Write your answer here:**
 
-Search term used: 
+Search term used: grep -i 'jail' data/ice-foia-logs/*.csv
 
 What you found: 
+data/ice-foia-logs/2024-08_FOIA_Log.csv:2024-ICFO-52273,2024-08-19,"Lai, Annie",UC Irvine School of Law - Immigrant Rights Clinic,"1. Data for the time period of 10/1/2017 to present on ICE civil/administrative immigration arrests made, with a breakdown by arrest date; apprehension method/agency; event type; whether the arrest was made in the field or via a law enforcement agency transfer (and if so, by which agency); whether a law enforcement agency transfer followed issuance of an ICE detainer (and if so, which agency was issued the detainer); arrest AOR, team, program; arrest location (city, county, state); arrestee country of citizenship, gender, age (or year of birth), conviction information, probation/parole status; and latest available status/disposition.* 2. For ICE civil/administrative immigration arrests made in the field, data for the time period of 10/1/2017 to present from the OM2 module in ICE’s enforcement database, with a breakdown by AOR; Team; Program; State; Operation; Arrestee Country of Citizenship; Arrestee Classification; Arrestee Criminality/Conviction; Activity Date; Place of Arrest; Level of Police Markings; and Target vs. Non-Target (“Activity Report” with Activity Type as “Arrest”).* 3. From the “Detainer Acceptance Tracker” or any successive record system for tracking county jail response to ICE detainer requests and/or other requests for ICE access to jail inmates or information, current (or last available) data, including: i. Name and location (city, county, state) of the relevant agency or facility; ii. Type of local jurisdiction or agency (e.g. sheriff, police department or other law enforcement entity); iii. Current detainer and notification acceptance status, including whether the agency holds people for ICE and whether they provide notice of release; iv. The extent or nature of ICE’s access to the facility; v. Comments regarding the jurisdiction or agency’s engagement on detainers and/or responses to ICE; vi. Prioritization of that jurisdiction or agency for cooperation by ICE; vii. The date of last engagement between ICE and the local jurisdiction or agency; and viii. The month and year that the jurisdiction or agency began or stopped accepting detainers or notification requests. 4. For the time period of 1/1/2020 to present, memoranda, bulletins, briefings, reports, guidance, handbooks/manuals, training materials, and/or data pertaining to the ICE ERO National Fugitive Operations Program’s “Probation and Parole” program.** 5. For the time period of 1/1/2020 to present, for the Los Angeles Field Office, San Francisco Field Office, and the ten (10) ERO Field Offices, including sub-offices, that had the highest number of field civil/administrative immigration arrests in FY 2023 where the Place of Arrest in OM2 was Probation and Parole, e-mail communications of Field Office personnel with probation or parole officials concerning: (a) planned immigration arrests of individuals (adults or juveniles) under probation/parole supervision, including in-custody arrests or arrests at probation/parole check-ins, appointments, and/or at individuals’ homes; (b) whether or not probation/parole officials are willing to share information about individuals (adults or juveniles) under their supervision with ICE and/or help to facilitate an immigration arrest; and (c) any consequences for a person’s probation or parole as a result of their arrest and detention by ICE, including but not limited to possible probation/parole revocation as a result of inability to attend meetings, classes, programs, or appointments."
+
+data/ice-foia-logs/2024-10_FOIA_Log.csv:2025-ICFO-05463,2024-10-31,"Fitch, Emily","Law Offices of Dean Malone, P.C.","all documents evidencing any audit, whether a DRO audit or otherwise, of any jail or holding facility in Dallas County, Texas, specifically the
 
 ### Try it yourself
 
@@ -554,14 +558,16 @@ Now let's practice with csvkit tools. Work through these exercises and record yo
 
 **Write your answers here:**
 
-1. Command used for csvgrep: 
+1. Command used for csvgrep:
+csvgrep -c 'Requester::Organization Name' -m 'Law' data/ice-foia-logs/2024-10_FOIA_Log.csv
 
-2. Command used to save with csvcut: 
+2. Command used to save with csvcut:
+csvgrep -c "Requester::Organization Name" -m "Law" data/ice-foia-logs/2024-10_FOIA_Log.csv | csvcut -c "Requester::Organization Name" > data/ice-foia-logs/2024_lawyer_requests.csv
 
 3. Analysis answers:
-   - Total lawyer/law firm requests: 
-   - Patterns observed: 
-   - More frequent ("Law" or "Legal"): 
+   - Total lawyer/law firm requests: 2,350
+   - Patterns observed: Lots of repeated firms, like Alexandra Lozano Immigration Law PLLC
+   - More frequent ("Law" or "Legal"): Law
 
 **Bonus answer:**
    - Number of unique names: 
@@ -680,12 +686,29 @@ Bonus points: Use `uniq` and `csvsort` to get only unique lawyer/law firm names.
 
 Commands used:
 
-1. csvgrep command: 
+1. csvgrep command:
+csvgrep -c 'Requester::Organization Name' -m "Law" data/ice-foia-logs/2024-10_FOIA_Log.csv | csvcut -c 'Requester::Organization Name' > data/ice-foia-logs/2024_lawyer_requests.csv
 
-2. csvcut and save command: 
+2. csvcut and save command:
+Oh, oops:
+csvcut -c 'Requester::Organization Name'
+data/ice-foia-logs/2024_lawyer_requests.csv
 
 3. Bonus - unique names command: 
 
 Results:
 - Total requests from legal organizations: 
 - Number of unique legal organization names: 
+
+### Reflection
+1. How could command line skills improve your efficiency as a journalist?
+I'm already seeing how powerful the command line can be. We humans cannot rival a computer's ability to rapidly iterate through a bunch of data, as long as you know what you're looking for (and know how to command it). While the command line cannot semantically understand things like LLMs, it is an amazingly fast way to get specific data, especially compared to sifting through a spreadsheet in Excel.
+
+2. What types of stories or investigations would benefit most from these tools?
+Anything with a lot of data, so I'm thinking: police-related stories (similar to the one we read by the AP for homework), disease-related stories (like COVID), election stories (where there is tons of data coming in from multiple locations), etc.
+
+3. What felt most challenging about learning these technical skills?
+Even though I already knew the concept of a command line and dabbled with the command line before this assignment, I still find typing the exact syntax (especially the order of certain arguments/options) to be challenging. It's definitely an adjustment to use a command line after spending nearly all my time in consumer apps with GUIs.
+
+4. How does this connect to your understanding of data journalism?
+I've always been interested in data journalism and investigative reporting, but I honestly didn't know how reporters actually analyzed and looked through data. I've always assumed it was something like this, but being able to actually practice it through this assignment (and I'm sure many others throughout this semester) is a great resource. I can definitely see this being useful for our class—the entire time I was doing this assignment I was thinking how cool it is that we now have LLMs to be the "other half" in understanding semantics within the data we're analyzing.
